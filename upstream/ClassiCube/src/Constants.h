@@ -9,8 +9,8 @@ Copyright 2014-2025 ClassiCube | Licensed under BSD-3
 #define GAME_APP_VER "1.3.8"
 
 #if defined SILTWALK_STANDALONE
-#define GAME_APP_NAME  "Siltwalk"
-#define GAME_APP_TITLE "Siltwalk"
+#define GAME_APP_NAME  "ClassiCube ESP32-S3"
+#define GAME_APP_TITLE "ClassiCube ESP32-S3"
 #elif defined CC_BUILD_WEB
 #define GAME_APP_ALT   "ClassiCube 1.3.8 web mobile"
 #define GAME_APP_NAME  "ClassiCube 1.3.8 web"

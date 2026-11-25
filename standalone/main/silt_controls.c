@@ -72,6 +72,17 @@ static void label(Band b, int x, int y, const char *message, uint16_t color, int
     silt_text_draw(b.buf, b.y, b.rows, x, y, message, color, scale);
 }
 
+static void centered(Band b, int y, const char *message, uint16_t color, int scale)
+{
+    label(b, (320 - silt_text_width(message, scale)) / 2, y, message, color, scale);
+}
+
+static void project_title(Band b, int y)
+{
+    centered(b, y, "ClassiCube", chalk, 2);
+    centered(b, y + 30, "实战派 ESP32-S3 移植版", tide, 1);
+}
+
 static void button(Band b, Box box, const char *name, uint16_t color)
 {
     rect(b, box.x, box.y, box.w, box.h, dark);
@@ -243,8 +254,8 @@ void silt_draw_band(uint16_t *dst, int y0, int rows)
         if (atomic_load(&s_show_loading)) {
             rect(b, 0, y0, 320, rows, dark);
             rect(b, 48, 80, 224, 2, tide);
-            label(b, 96, 98, "泥岸行旅", chalk, 2);
-            label(b, 112, 143, "正在进入河口", gold, 1);
+            project_title(b, 92);
+            centered(b, 148, "正在进入河口", gold, 1);
         }
         return;
     }
@@ -252,7 +263,7 @@ void silt_draw_band(uint16_t *dst, int y0, int rows)
     silt_rules_snapshot(&state);
 
     rect(b, 7, 6, 120, 54, dark);
-    label(b, 14, 9, "泥岸行旅", chalk, 1);
+    label(b, 14, 9, "ClassiCube", chalk, 1);
     label(b, 14, 25, "生命", chalk, 1);
     label(b, 14, 42, "体力", chalk, 1);
     meter(b, 63, 30, state.health, SV_MAX_HEALTH, red);
@@ -307,8 +318,8 @@ void silt_boot_message(const char *message)
         Band b = {pixels, y, ROWS};
         rect(b, 0, y, 320, ROWS, dark);
         rect(b, 25, 84, 270, 2, tide);
-        label(b, 96, 104, "泥岸行旅", chalk, 2);
-        label(b, (320 - silt_text_width(message, 1)) / 2, 145, message, gold, 1);
+        project_title(b, 92);
+        centered(b, 148, message, gold, 1);
         if (bsp_lcd_blit(0, y, 320, y + ROWS, pixels) != ESP_OK) break;
     }
     free(pixels);
