@@ -1,0 +1,7 @@
+/standalone/build/
+/standalone/managed_components/
+/standalone/sdkconfig
+/standalone/sdkconfig.old
+/.release/
+__pycache__/
+*.pyc
