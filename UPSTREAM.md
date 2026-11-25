@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | 1. ClassiCube 上游 | [ClassiCube/ClassiCube · bb706fd](https://github.com/ClassiCube/ClassiCube/tree/bb706fd05ad6c338e68a17b4f2db45ef3a21663a) | 提供 C 语言游戏引擎，包括地图和区块网格、玩家控制、输入、纹理加载和游戏循环。提交号来自 HoloCubic 端口的上游说明。 |
 | 2. HoloCubic ESP32-S3 端口 | [clocteck/minecraft-esp32s3 · 883f3a8](https://github.com/clocteck/minecraft-esp32s3/tree/883f3a802a8dd7d1413ffd62d8b9c0b77fb0149b) | 在 ClassiCube 上加入 ESP32-S3 平台代码、定点软件渲染、双核批量光栅、RGB565 分条显示和内存优化。该端口的发布形式是供 HoloCubic 宿主加载的模块。 |
-| 3. 实战派独立移植 | [ClingYang/siltwalk-esp32s3](https://github.com/ClingYang/siltwalk-esp32s3) | 以第 2 层为直接上游。保留 ESP32-S3 渲染底座，通过实战派板级驱动构建可独立烧录的 ESP-IDF 应用。加入触摸、中文界面、原创建材与音频、生存玩法和 SD 卡存档。 |
+| 3. 实战派独立移植 | [ClingYang/classicube-esp32s3](https://github.com/ClingYang/classicube-esp32s3) | 以第 2 层为直接上游。保留 ESP32-S3 渲染底座，通过实战派板级驱动构建可独立烧录的 ESP-IDF 应用。加入触摸、中文界面、原创建材与音频、生存玩法和 SD 卡存档。 |
 
 ## 从哪里看代码
 

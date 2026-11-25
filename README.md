@@ -16,7 +16,7 @@
 
 ## 当前版本
 
-**v0.1.1 试玩版**。已接入触屏移动和视角、跳跃、长按采集、走近拾取、合成、建造、工具磨损、昼夜、受伤、复活，以及 SD 卡保存和读取。游戏用夜间寒冷、体力消耗和摔落作为主要危险。地图大小为 **96×32×96**，当前是离线单人体验。联网、敌对生物和模式选择不在这一版的功能范围内。
+**v0.1.2 试玩版**。已接入触屏移动和视角、跳跃、长按采集、走近拾取、合成、建造、工具磨损、昼夜、受伤、复活，以及 SD 卡保存和读取。游戏用夜间寒冷、体力消耗和摔落作为主要危险。地图大小为 **96×32×96**，当前是离线单人体验。联网、敌对生物和模式选择不在这一版的功能范围内。
 
 实板已确认进入地图、触摸移动、写入 SD 卡和重启恢复位置。采集、拾取、合成、库存扣除和损坏存档回退也通过了主机检查。实板固定存档视角的日常版日志约 **20–25 FPS**，帧率随视角和地形变化。截图为从设备读取的 LCD 合成帧；发布固件默认关闭自动抓帧。
 
@@ -65,9 +65,9 @@ idf.py -p COM14 flash
 idf.py -p COM14 monitor
 ```
 
-`COM14` 只是测试机的示例。将其改为设备实际端口。首次编译会从 Espressif 组件仓库下载 `esp_codec_dev`，锁定为 1.6.2。产物是 `standalone/build/siltwalk.bin`。如果已经使用相同的分区表，可使用 `idf.py -p COM14 app-flash` 只更新应用。
+`COM14` 只是测试机的示例。将其改为设备实际端口。首次编译会从 Espressif 组件仓库下载 `esp_codec_dev`，锁定为 1.6.2。产物是 `standalone/build/classicube_esp32s3.bin`。如果已经使用相同的分区表，可使用 `idf.py -p COM14 app-flash` 只更新应用。
 
-也可以下载 [GitHub Releases](https://github.com/ClingYang/siltwalk-esp32s3/releases) 的固件 ZIP。解压后在该目录运行：
+也可以下载 [GitHub Releases](https://github.com/ClingYang/classicube-esp32s3/releases) 的固件 ZIP。解压后在该目录运行：
 
 ```sh
 python -m esptool --chip esp32s3 -p COM14 -b 460800 write-flash @flash_args
